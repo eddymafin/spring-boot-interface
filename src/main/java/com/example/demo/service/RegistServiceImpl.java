@@ -1,5 +1,9 @@
 package com.example.demo.service;
 
+import org.springframework.stereotype.Service;
+
+//@SpringBootApplicationにより、com.example.demo配下すべてが、Bean化されている。
+@Service
 public class RegistServiceImpl implements RegistService {
 
 	@Override
