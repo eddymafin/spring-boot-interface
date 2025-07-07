@@ -22,7 +22,7 @@ public class ReviewController {
 	//下記、Spring Bootのソース>フィールドを使用してコンストラクターを生成　により自動生成。
 //	(デフォルト・コンストラクターsupe()の呼び出しは、省略にチェック)
 //	@Autowired これは、コンストラクターが一つのため省略が可能
-	//下記は、@RequiredArgsConstructorをつけると、初期化が必要なフィールドを
+	//下記は、lombokの@RequiredArgsConstructorをつけると、初期化が必要なフィールドを
 	//初期化するコンストラクタを自動生成するので、省略が可能。
 //	public ReviewController(RegistService service) {
 //		this.service = service;
