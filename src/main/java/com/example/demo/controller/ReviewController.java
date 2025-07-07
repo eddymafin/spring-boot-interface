@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.ReviewRegistForm;
+import com.example.demo.mock.RegistServiceMock;
 import com.example.demo.service.RegistService;
-import com.example.demo.service.RegistServiceImpl;
 
 @Controller
 public class ReviewController {
@@ -55,7 +55,13 @@ public class ReviewController {
 		}
 		
 //		RegistServiceというインターフェースの型で、serviceという変数を定義
-		RegistService service = new RegistServiceImpl();
+//		RegistService service = new RegistServiceImpl();
+		
+//		RegistServiceMockのほうのオブジェクトを使用。インターフェースの型を使用しているため、型の変更は不要.
+//		インスタンスするメソッドだけ修正
+		RegistService service = new RegistServiceMock();
+		
+		
 		String msg = service.regist();
 		
 		
