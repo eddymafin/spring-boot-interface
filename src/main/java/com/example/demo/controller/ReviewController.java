@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.ReviewRegistForm;
+import com.example.demo.service.RegistService;
+import com.example.demo.service.RegistServiceImpl;
 
 @Controller
 public class ReviewController {
@@ -50,8 +52,14 @@ public class ReviewController {
 		// エラーがある場合は、登録画面に戻す	
 		if(result.hasErrors()){
 			return "regist-review";
-		}	
-		model.addAttribute("msg","レビュー登録完了しました！");
+		}
+		
+//		RegistServiceというインターフェースの型で、serviceという変数を定義
+		RegistService service = new RegistServiceImpl();
+		String msg = service.regist();
+		
+		
+		model.addAttribute("msg",msg);
 		return "complete-regist-review";
 	}
 
